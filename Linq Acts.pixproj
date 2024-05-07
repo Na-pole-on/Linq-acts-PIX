@@ -25,19 +25,35 @@
     </ProjectFileItem>
     <ProjectFileItem z:Id="i7">
       <IsMain>false</IsMain>
-      <Path>Excel\Excel_WorkWithExcel.pix</Path>
+      <Path>Linq\Linq_WorkWithDataTable.pix</Path>
     </ProjectFileItem>
     <ProjectFileItem z:Id="i8">
       <IsMain>false</IsMain>
-      <Path>Linq\Linq_WorkWithDataTable.pix</Path>
+      <Path>Excel\Excel_FillRange.pix</Path>
     </ProjectFileItem>
     <ProjectFileItem z:Id="i9">
       <IsMain>false</IsMain>
-      <Path>Excel\Excel_FillRange.pix</Path>
+      <Path>Excel\Excel_fillingTamplate.pix</Path>
     </ProjectFileItem>
     <ProjectFileItem z:Id="i10">
       <IsMain>false</IsMain>
-      <Path>Excel\Excel_fillingTamplate.pix</Path>
+      <Path>Excel\Excel_WorkWithExcelInFirst.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i11">
+      <IsMain>false</IsMain>
+      <Path>Project\Project_GetPainting.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i12">
+      <IsMain>false</IsMain>
+      <Path>Project\Project_ClearEmptyColumns.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i13">
+      <IsMain>false</IsMain>
+      <Path>Excel\Excel_WorkWithExcelInSecond.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i14">
+      <IsMain>false</IsMain>
+      <Path>Excel\Excel_GetTemplateTable.pix</Path>
     </ProjectFileItem>
   </Files>
   <MasterUploadId i:nil="true" />

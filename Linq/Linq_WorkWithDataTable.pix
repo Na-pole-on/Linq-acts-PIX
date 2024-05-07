@@ -71,24 +71,24 @@
             <_expression>in_dt_first.AsEnumerable()
     .Except(in_dt_first.AsEnumerable()
         .Join(in_dt_second.AsEnumerable(),
-            row_1 =&gt; (Regex.Match(row_1[1].ToString(), @"((?&lt;=СФ1-0)|(^)|(?&lt;=Т0000)|(?&lt;=\()|(?&lt;=BGK)|(?&lt;=№))\d+").Value,
-                      DateTime.ParseExact(Regex.Match(row_1[1].ToString().Trim(), @"\d{2}\.\d{2}\.\d{4}").Value, "dd.MM.yyyy", CultureInfo.InvariantCulture)),
-            row_2 =&gt; (Regex.Match(row_2[3].ToString(), @"((?&lt;=СФ1-0)|(^)|(?&lt;=Т0000)|(?&lt;=\()|(?&lt;=BGK)|(?&lt;=№))\d+").Value,
-                      DateTime.ParseExact(Regex.Match(row_2[2].ToString().Trim(), @"\d{2}\.\d{2}\.\d{4}").Value, "dd.MM.yyyy", CultureInfo.InvariantCulture)),
+            row_1 =&gt; (Regex.Match(row_1["Документ - Сказка"].ToString(), @"((?&lt;=СФ1-0)|(^)|(?&lt;=Т0000)|(?&lt;=\()|(?&lt;=BGK)|(?&lt;=№))\d+").Value,
+                      DateTime.ParseExact(Regex.Match(row_1["Документ - Сказка"].ToString().Trim(), @"\d{2}\.\d{2}\.\d{4}").Value, "dd.MM.yyyy", CultureInfo.InvariantCulture)),
+            row_2 =&gt; (Regex.Match(row_2["Номер документа"].ToString(), @"((?&lt;=СФ1-0)|(^)|(?&lt;=Т0000)|(?&lt;=\()|(?&lt;=BGK)|(?&lt;=№))\d+").Value,
+                      DateTime.ParseExact(Regex.Match(row_2["Дата документа"].ToString().Trim(), @"\d{2}\.\d{2}\.\d{4}").Value, "dd.MM.yyyy", CultureInfo.InvariantCulture)),
         (row_1, row_2) =&gt; row_1))
     .Select(dr =&gt; {
     
-        DataRow row = dt_isHaveNot.NewRow();
+        DataRow row = io_dt_template.NewRow();
         
-        row["position"] = in_dt_first.Rows.IndexOf(dr) + 10;
-        row["number"] = dt_isHaveNot.Rows.Count;
-        row["doc_number"] = Regex.Match(dr[1].ToString(), @"((?&lt;=СФ1-0)|(^)|(?&lt;=Т0000)|(?&lt;=\()|(?&lt;=BGK)|(?&lt;=№))\d+").Value;
-        row["date"] = Regex.Match(dr[1].ToString().Trim(), @"(?&lt;=\s)\d{2}.\d{2}.\d{4}").Value;
-        row["skazka_debit"] = (string.IsNullOrEmpty(dr[2].ToString())) ? "0" : dr[2].ToString();
-        row["skazka_credit"] = (string.IsNullOrEmpty(dr[3].ToString())) ? "0" : dr[3].ToString();
+        row["position"] = in_dt_first.Rows.IndexOf(dr) + in_int_startDataInFirst;
+        row["Номер п/п"] = dt_isHaveNot.Rows.Count;
+        row["Nº первичного документа"] = Regex.Match(dr["Документ - Сказка"].ToString(), @"((?&lt;=СФ1-0)|(^)|(?&lt;=Т0000)|(?&lt;=\()|(?&lt;=BGK)|(?&lt;=№))\d+").Value;
+        row["Дата первичного документа"] = Regex.Match(dr["Документ - Сказка"].ToString().Trim(), @"(?&lt;=\s)\d{2}.\d{2}.\d{4}").Value;
+        row["По данным Сказка Дебет"] = (string.IsNullOrEmpty(dr["Дебет - Сказка"].ToString())) ? "0" : dr["Дебет - Сказка"].ToString();
+        row["По данным Сказка Кредит"] = (string.IsNullOrEmpty(dr["Кредит - Сказка"].ToString())) ? "0" : dr["Кредит - Сказка"].ToString();
         row["status"] = "объект не был найден в другом документе";
         
-        dt_isHaveNot.Rows.Add(row);
+        io_dt_template.Rows.Add(row);
         
         return row;
         
@@ -670,6 +670,48 @@
       <Name>in_dict_paths</Name>
       <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
+    </Parameter>
+    <Parameter z:Id="i65">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>io_dt_template</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.Data.DataTable</TypeString>
+    </Parameter>
+    <Parameter z:Id="i66">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>in_int_startDataInFirst</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.Int32</TypeString>
+    </Parameter>
+    <Parameter z:Id="i67">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>in_int_startDataInSecond</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.Int32</TypeString>
+    </Parameter>
+    <Parameter z:Id="i68">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>in_int_startDataInTemplate</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.Int32</TypeString>
+    </Parameter>
+    <Parameter z:Id="i69">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>in_str_paintingInFirst</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.String</TypeString>
+    </Parameter>
+    <Parameter z:Id="i70">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>in_str_paintingInSecond</Name>
+      <RunnerType>None</RunnerType>
+      <TypeString>System.String</TypeString>
     </Parameter>
   </Params>
   <TemplateVersion xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" i:nil="true" />
