@@ -30,7 +30,7 @@
                               <PropertyValue z:Id="i10">
                                 <PropertyName>Range</PropertyName>
                                 <_dataType>Expression</_dataType>
-                                <_expression>"C" + row[0].ToString()</_expression>
+                                <_expression>in_str_paintingInFirst + row["position"].ToString()</_expression>
                                 <_value i:nil="true" />
                                 <_xpathSettings xmlns:d17p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                               </PropertyValue>
@@ -98,7 +98,7 @@
                               <PropertyValue z:Id="i18">
                                 <PropertyName>Range</PropertyName>
                                 <_dataType>Expression</_dataType>
-                                <_expression>"D" + row[0].ToString()</_expression>
+                                <_expression>in_str_paintingInSecond + row["position"].ToString()</_expression>
                                 <_value i:nil="true" />
                                 <_xpathSettings xmlns:d17p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                               </PropertyValue>
@@ -268,7 +268,7 @@
                               <PropertyValue z:Id="i36">
                                 <PropertyName>Range</PropertyName>
                                 <_dataType>Expression</_dataType>
-                                <_expression>"C" + row[0].ToString()</_expression>
+                                <_expression>in_str_paintingInFirst + row["position"].ToString()</_expression>
                                 <_value i:nil="true" />
                                 <_xpathSettings xmlns:d17p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                               </PropertyValue>
@@ -450,7 +450,7 @@
                               <PropertyValue z:Id="i55">
                                 <PropertyName>Range</PropertyName>
                                 <_dataType>Expression</_dataType>
-                                <_expression>"C" + row[0].ToString()</_expression>
+                                <_expression>in_str_paintingInFirst + row["position"].ToString()</_expression>
                                 <_value i:nil="true" />
                                 <_xpathSettings xmlns:d17p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                               </PropertyValue>
@@ -518,7 +518,7 @@
                               <PropertyValue z:Id="i63">
                                 <PropertyName>Range</PropertyName>
                                 <_dataType>Expression</_dataType>
-                                <_expression>"D" + row[0].ToString()</_expression>
+                                <_expression>in_str_paintingInSecond + row["position"].ToString()</_expression>
                                 <_value i:nil="true" />
                                 <_xpathSettings xmlns:d17p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                               </PropertyValue>
@@ -681,35 +681,42 @@
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_str_path</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.String</TypeString>
     </Parameter>
     <Parameter z:Id="i75">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dt_fillToRed</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
     <Parameter z:Id="i76">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dt_fillToGray</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
     <Parameter z:Id="i77">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dt_fillToYellow</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
     <Parameter z:Id="i78">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_str_sheet</Name>
-      <RunnerType>None</RunnerType>
+      <TypeString>System.String</TypeString>
+    </Parameter>
+    <Parameter z:Id="i79">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>in_str_paintingInFirst</Name>
+      <TypeString>System.String</TypeString>
+    </Parameter>
+    <Parameter z:Id="i80">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>in_str_paintingInSecond</Name>
       <TypeString>System.String</TypeString>
     </Parameter>
   </Params>

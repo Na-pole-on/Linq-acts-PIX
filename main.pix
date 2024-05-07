@@ -242,7 +242,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Создание таблицы шаблонов</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i33" i:type="ExecutedStep">
@@ -269,7 +269,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Начало для первго листа</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i36" i:type="ExecutedStep">
@@ -296,7 +296,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Колонка для закрашивания для первого листа</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i39" i:type="ExecutedStep">
@@ -323,7 +323,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Начало для второго листа</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i42" i:type="ExecutedStep">
@@ -350,7 +350,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Колонка для закрашивания для второго листа</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i45" i:type="ExecutedStep">
@@ -377,7 +377,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Начало заполнения дл шаблона</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i48" i:type="ExecutedStep">
@@ -429,7 +429,7 @@
           </PropertyValue>
         </PropertyValues>
         <SelectedOptionId i:nil="true" />
-        <EnableStatus>false</EnableStatus>
+        <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
         <Text>Хотите запустить 1С?</Text>
@@ -515,7 +515,7 @@
           </PropertyValue>
         </PropertyValues>
         <SelectedOptionId i:nil="true" />
-        <EnableStatus>false</EnableStatus>
+        <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
         <Text></Text>
@@ -530,14 +530,14 @@
             <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>Directory.GetFiles(dict_paths["InFolder"], "*Акты*.xlsx")
-    .Where(str_path =&gt; str_path.Contains("~$") == false).ToList()</_expression>
+    .Where(str_path =&gt; str_path.Contains("~$") == false).FirstOrDefault()</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
           <PropertyValue z:Id="i66">
             <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>list_actFiles</_expression>
+            <_expression>file</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
@@ -546,75 +546,67 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text>Получение файлов в входной папке</Text>
+        <Text>Получение файла в входной папке</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i67" i:type="ExecutedStep">
-        <Childs>
-          <AbstractStep z:Id="i68" i:type="ExecutedStep">
-            <Childs />
-            <Id>64c06a11-3982-4642-8115-8d9a05b18580</Id>
-            <Parent z:Ref="i67" />
-            <PropertyValues>
-              <PropertyValue z:Id="i69">
-                <PropertyName>PathFrom</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>file</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i70">
-                <PropertyName>PathTo</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>Path.Combine(dict_paths["TempFolder"], file)</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i71">
-                <PropertyName>WithDeleteFrom</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i72">
-                <PropertyName>WithDeleteTo</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-            </PropertyValues>
-            <SelectedOptionId i:nil="true" />
-            <EnableStatus>true</EnableStatus>
-            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-            <RetryCount>-1</RetryCount>
-            <Text>Копирование файла акты в temp</Text>
-            <_activityFullName>Activities.Files.CopyFileCatalog</_activityFullName>
-          </AbstractStep>
-        </Childs>
-        <Id>949f4a57-8f4f-432c-8d93-1301288eb3f5</Id>
+        <Childs />
+        <Id>dea25539-7490-4d61-8759-eced652a5f8a</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i73">
-            <PropertyName>Collection</PropertyName>
+          <PropertyValue z:Id="i68">
+            <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>list_actFiles</_expression>
+            <_expression>Path.Combine(dict_paths["TempFolder"], Path.GetFileName(file))</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i74">
-            <PropertyName>Iterator</PropertyName>
+          <PropertyValue z:Id="i69">
+            <PropertyName>To</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>str_pathToAct</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Строка пути для актов</Text>
+        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i70" i:type="ExecutedStep">
+        <Childs />
+        <Id>64c06a11-3982-4642-8115-8d9a05b18580</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i71">
+            <PropertyName>PathFrom</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>file</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i75">
-            <PropertyName>Counter</PropertyName>
+          <PropertyValue z:Id="i72">
+            <PropertyName>PathTo</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression></_expression>
+            <_expression>str_pathToAct</_expression>
             <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i73">
+            <PropertyName>WithDeleteFrom</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i74">
+            <PropertyName>WithDeleteTo</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
         </PropertyValues>
@@ -622,52 +614,52 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
-        <_activityFullName>BR.Core.Base.LoopForEach</_activityFullName>
+        <Text>Копирование файла акты в temp</Text>
+        <_activityFullName>Activities.Files.CopyFileCatalog</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i76" i:type="ExecutedStep">
+      <AbstractStep z:Id="i75" i:type="ExecutedStep">
         <Childs />
         <Id>94aa0911-bc7b-440d-a856-fb40bd217647</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i77">
+          <PropertyValue z:Id="i76">
             <PropertyName>FilePath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>@"Excel\Excel_WorkWithExcelInFirst.pix"</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i78">
+          <PropertyValue z:Id="i77">
             <PropertyName>Parameters</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d7p1:ArrayOfArgumentItem">
-              <d7p1:ArgumentItem z:Id="i79">
+              <d7p1:ArgumentItem z:Id="i78">
                 <d7p1:ArgumentName>out_dt_excelTable</d7p1:ArgumentName>
                 <d7p1:Expression>dt_first</d7p1:Expression>
                 <d7p1:Type>System.Data.DataTable</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i80">
+              <d7p1:ArgumentItem z:Id="i79">
                 <d7p1:ArgumentName>in_str_sheet</d7p1:ArgumentName>
                 <d7p1:Expression>"First"</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i81">
+              <d7p1:ArgumentItem z:Id="i80">
                 <d7p1:ArgumentName>in_dict_paths</d7p1:ArgumentName>
                 <d7p1:Expression>dict_paths</d7p1:Expression>
                 <d7p1:Type>Dictionary&lt;System.String, System.String&gt;</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i82">
+              <d7p1:ArgumentItem z:Id="i81">
                 <d7p1:ArgumentName>in_str_path</d7p1:ArgumentName>
-                <d7p1:Expression>@"Temp\Акты.xlsx"</d7p1:Expression>
+                <d7p1:Expression>str_pathToAct</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i83">
+              <d7p1:ArgumentItem z:Id="i82">
                 <d7p1:ArgumentName>out_int_startDataInFirst</d7p1:ArgumentName>
                 <d7p1:Expression>int_startDataInFirst</d7p1:Expression>
                 <d7p1:Type>System.Int32</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i84">
+              <d7p1:ArgumentItem z:Id="i83">
                 <d7p1:ArgumentName>out_str_paintingInFirst</d7p1:ArgumentName>
                 <d7p1:Expression>str_paintingInFirst</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
@@ -675,7 +667,7 @@
             </_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i85">
+          <PropertyValue z:Id="i84">
             <PropertyName>Timeout</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
@@ -687,52 +679,52 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Получение данных из первого листа</Text>
         <_activityFullName>BR.Core.Base.ExecuteScript</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i86" i:type="ExecutedStep">
+      <AbstractStep z:Id="i85" i:type="ExecutedStep">
         <Childs />
         <Id>3ce53f3d-5ddb-4eee-a3a0-aaca6c4f6450</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i87">
+          <PropertyValue z:Id="i86">
             <PropertyName>FilePath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>@"Excel\Excel_WorkWithExcelInSecond.pix"</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i88">
+          <PropertyValue z:Id="i87">
             <PropertyName>Parameters</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d7p1:ArrayOfArgumentItem">
-              <d7p1:ArgumentItem z:Id="i89">
+              <d7p1:ArgumentItem z:Id="i88">
                 <d7p1:ArgumentName>out_dt_excelTable</d7p1:ArgumentName>
                 <d7p1:Expression>dt_second</d7p1:Expression>
                 <d7p1:Type>System.Data.DataTable</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i90">
+              <d7p1:ArgumentItem z:Id="i89">
                 <d7p1:ArgumentName>in_str_sheet</d7p1:ArgumentName>
                 <d7p1:Expression>"Second"</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i91">
+              <d7p1:ArgumentItem z:Id="i90">
                 <d7p1:ArgumentName>in_dict_paths</d7p1:ArgumentName>
                 <d7p1:Expression>dict_paths</d7p1:Expression>
                 <d7p1:Type>Dictionary&lt;System.String, System.String&gt;</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i92">
+              <d7p1:ArgumentItem z:Id="i91">
                 <d7p1:ArgumentName>in_str_path</d7p1:ArgumentName>
-                <d7p1:Expression>@"Temp\Акты.xlsx"</d7p1:Expression>
+                <d7p1:Expression>str_pathToAct</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i93">
+              <d7p1:ArgumentItem z:Id="i92">
                 <d7p1:ArgumentName>out_int_startDataInSecond</d7p1:ArgumentName>
                 <d7p1:Expression>int_startDataInSecond</d7p1:Expression>
                 <d7p1:Type>System.Int32</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i94">
+              <d7p1:ArgumentItem z:Id="i93">
                 <d7p1:ArgumentName>out_str_paintingInSecond</d7p1:ArgumentName>
                 <d7p1:Expression>str_paintingInSecond</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
@@ -740,7 +732,7 @@
             </_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i95">
+          <PropertyValue z:Id="i94">
             <PropertyName>Timeout</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
@@ -752,55 +744,110 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Получение данных из второго листа</Text>
         <_activityFullName>BR.Core.Base.ExecuteScript</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i96" i:type="ExecutedStep">
+      <AbstractStep z:Id="i95" i:type="ExecutedStep">
+        <Childs />
+        <Id>44cf36d0-73df-4f3a-ad2c-5a89ad0276fe</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i96">
+            <PropertyName>Value</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>Directory.GetFiles(dict_paths["TemplatesFolder"], "*Шаблон*.xlsx")
+    .Where(str_path =&gt; str_path.Contains("~$") == false).FirstOrDefault()</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i97">
+            <PropertyName>To</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>file</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Получение файла для шаблона</Text>
+        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i98" i:type="ExecutedStep">
+        <Childs />
+        <Id>532b61ce-fff0-4aee-bd38-c554773ecd91</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i99">
+            <PropertyName>Value</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>Path.Combine(dict_paths["TemplatesFolder"], Path.GetFileName(file))</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i100">
+            <PropertyName>To</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>str_pathToTemplate</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Строка пути для шаблона</Text>
+        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i101" i:type="ExecutedStep">
         <Childs />
         <Id>0429646a-cc2b-4ef5-8c66-fa6a3ecdbabd</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i97">
+          <PropertyValue z:Id="i102">
             <PropertyName>FilePath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>@"Excel\Excel_GetTemplateTable.pix"</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i98">
+          <PropertyValue z:Id="i103">
             <PropertyName>Parameters</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d7p1:ArrayOfArgumentItem">
-              <d7p1:ArgumentItem z:Id="i99">
+              <d7p1:ArgumentItem z:Id="i104">
                 <d7p1:ArgumentName>in_dict_paths</d7p1:ArgumentName>
                 <d7p1:Expression>dict_paths</d7p1:Expression>
                 <d7p1:Type>Dictionary&lt;System.String, System.String&gt;</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i100">
+              <d7p1:ArgumentItem z:Id="i105">
                 <d7p1:ArgumentName>out_dt_excelTable</d7p1:ArgumentName>
                 <d7p1:Expression>dt_template</d7p1:Expression>
                 <d7p1:Type>System.Data.DataTable</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i101">
+              <d7p1:ArgumentItem z:Id="i106">
                 <d7p1:ArgumentName>out_int_startDataInTemplate</d7p1:ArgumentName>
                 <d7p1:Expression>int_startDataInTemplate</d7p1:Expression>
                 <d7p1:Type>System.Int32</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i102">
+              <d7p1:ArgumentItem z:Id="i107">
                 <d7p1:ArgumentName>in_str_sheet</d7p1:ArgumentName>
                 <d7p1:Expression>"ПРОТОКОЛ"</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i103">
+              <d7p1:ArgumentItem z:Id="i108">
                 <d7p1:ArgumentName>in_str_path</d7p1:ArgumentName>
-                <d7p1:Expression>""</d7p1:Expression>
+                <d7p1:Expression>str_pathToTemplate</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
               </d7p1:ArgumentItem>
             </_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i104">
+          <PropertyValue z:Id="i109">
             <PropertyName>Timeout</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
@@ -812,67 +859,67 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Получение таблицы шаблонов</Text>
         <_activityFullName>BR.Core.Base.ExecuteScript</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i105" i:type="ExecutedStep">
+      <AbstractStep z:Id="i110" i:type="ExecutedStep">
         <Childs />
         <Id>ec57c8cb-a773-4c84-9549-87eac37e6369</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i106">
+          <PropertyValue z:Id="i111">
             <PropertyName>FilePath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>@"Linq\Linq_WorkWithDataTable.pix"</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i107">
+          <PropertyValue z:Id="i112">
             <PropertyName>Parameters</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.Core" i:type="d7p1:ArrayOfArgumentItem">
-              <d7p1:ArgumentItem z:Id="i108">
+              <d7p1:ArgumentItem z:Id="i113">
                 <d7p1:ArgumentName>in_dt_first</d7p1:ArgumentName>
                 <d7p1:Expression>dt_first</d7p1:Expression>
                 <d7p1:Type>System.Data.DataTable</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i109">
+              <d7p1:ArgumentItem z:Id="i114">
                 <d7p1:ArgumentName>in_dt_second</d7p1:ArgumentName>
                 <d7p1:Expression>dt_second</d7p1:Expression>
                 <d7p1:Type>System.Data.DataTable</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i110">
+              <d7p1:ArgumentItem z:Id="i115">
                 <d7p1:ArgumentName>in_dict_paths</d7p1:ArgumentName>
                 <d7p1:Expression>dict_paths</d7p1:Expression>
                 <d7p1:Type>Dictionary&lt;System.String, System.String&gt;</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i111">
+              <d7p1:ArgumentItem z:Id="i116">
                 <d7p1:ArgumentName>io_dt_template</d7p1:ArgumentName>
                 <d7p1:Expression>dt_template</d7p1:Expression>
                 <d7p1:Type>System.Data.DataTable</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i112">
+              <d7p1:ArgumentItem z:Id="i117">
                 <d7p1:ArgumentName>in_int_startDataInFirst</d7p1:ArgumentName>
                 <d7p1:Expression>int_startDataInFirst</d7p1:Expression>
                 <d7p1:Type>System.Int32</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i113">
+              <d7p1:ArgumentItem z:Id="i118">
                 <d7p1:ArgumentName>in_int_startDataInSecond</d7p1:ArgumentName>
                 <d7p1:Expression>int_startDataInSecond</d7p1:Expression>
                 <d7p1:Type>System.Int32</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i114">
+              <d7p1:ArgumentItem z:Id="i119">
                 <d7p1:ArgumentName>in_int_startDataInTemplate</d7p1:ArgumentName>
                 <d7p1:Expression>int_startDataInTemplate</d7p1:Expression>
                 <d7p1:Type>System.Int32</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i115">
+              <d7p1:ArgumentItem z:Id="i120">
                 <d7p1:ArgumentName>in_str_paintingInFirst</d7p1:ArgumentName>
                 <d7p1:Expression>str_paintingInFirst</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
               </d7p1:ArgumentItem>
-              <d7p1:ArgumentItem z:Id="i116">
+              <d7p1:ArgumentItem z:Id="i121">
                 <d7p1:ArgumentName>in_str_paintingInSecond</d7p1:ArgumentName>
                 <d7p1:Expression>str_paintingInSecond</d7p1:Expression>
                 <d7p1:Type>System.String</d7p1:Type>
@@ -880,7 +927,7 @@
             </_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i117">
+          <PropertyValue z:Id="i122">
             <PropertyName>Timeout</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
@@ -895,12 +942,12 @@
         <Text>Получение и закраска полей</Text>
         <_activityFullName>BR.Core.Base.ExecuteScript</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i118" i:type="ExecutedStep">
+      <AbstractStep z:Id="i123" i:type="ExecutedStep">
         <Childs />
         <Id>0295b41b-7484-4387-9d3b-926c53d2b335</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i119">
+          <PropertyValue z:Id="i124">
             <PropertyName>FilePath</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>dict_paths["TempFolder"]</_expression>
@@ -929,18 +976,16 @@
   <Name>main.pix</Name>
   <Namespaces xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <Params>
-    <Parameter z:Id="i120">
+    <Parameter z:Id="i125">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_config</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i121">
+    <Parameter z:Id="i126">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_paths</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
   </Params>

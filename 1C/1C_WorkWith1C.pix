@@ -15351,7 +15351,6 @@
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>dict_config</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
   </Params>

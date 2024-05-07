@@ -31,7 +31,7 @@
             <EnableStatus>true</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
-            <Text></Text>
+            <Text>Есть ли пустые колонки</Text>
             <_activityFullName>BR.Core.Base.Assign</_activityFullName>
           </AbstractStep>
           <AbstractStep z:Id="i7" i:type="ExecutedStep">
@@ -76,7 +76,7 @@
                     <EnableStatus>true</EnableStatus>
                     <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                     <RetryCount>-1</RetryCount>
-                    <Text></Text>
+                    <Text>Удаляем пустую колонку</Text>
                     <_activityFullName>Activities.BaseCollections.DataTable.DeleteColumn</_activityFullName>
                   </AbstractStep>
                 </Childs>
@@ -145,7 +145,7 @@
             <EnableStatus>true</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
-            <Text></Text>
+            <Text>Шаг назад</Text>
             <_activityFullName>BR.Core.Base.Assign</_activityFullName>
           </AbstractStep>
         </Childs>
@@ -192,14 +192,12 @@
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>io_dt_table</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
     <Parameter z:Id="i22">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>i</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Int32</TypeString>
     </Parameter>
   </Params>

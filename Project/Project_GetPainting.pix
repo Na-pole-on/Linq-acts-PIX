@@ -85,7 +85,7 @@
             <EnableStatus>true</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
-            <Text></Text>
+            <Text>Есть ли тут колонка эта</Text>
             <_activityFullName>BR.Core.Base.Assign</_activityFullName>
           </AbstractStep>
           <AbstractStep z:Id="i13" i:type="ExecutedStep">
@@ -116,7 +116,7 @@
                     <EnableStatus>true</EnableStatus>
                     <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                     <RetryCount>-1</RetryCount>
-                    <Text></Text>
+                    <Text>Присвоить позицию</Text>
                     <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                   </AbstractStep>
                   <AbstractStep z:Id="i18" i:type="ExecutedStep">
@@ -197,7 +197,7 @@
             <EnableStatus>true</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
-            <Text></Text>
+            <Text>Шаг вперед</Text>
             <_activityFullName>BR.Core.Base.Assign</_activityFullName>
           </AbstractStep>
         </Childs>
@@ -250,7 +250,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Получение названия колонки</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
     </Childs>
@@ -271,21 +271,18 @@
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dt_table</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
     <Parameter z:Id="i30">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>out_str_paintingIndex</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.String</TypeString>
     </Parameter>
     <Parameter z:Id="i31">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_str_columnName</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.String</TypeString>
     </Parameter>
   </Params>

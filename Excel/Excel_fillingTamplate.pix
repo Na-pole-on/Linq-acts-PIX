@@ -13,14 +13,14 @@
           <PropertyValue z:Id="i4">
             <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>Directory.GetFiles(in_dict_paths["TemplatesFolder"])</_expression>
+            <_expression>Directory.GetFiles(in_dict_paths["TemplatesFolder"]).FirstOrDefault()</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
           <PropertyValue z:Id="i5">
             <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>list_filesInTemplates</_expression>
+            <_expression>file</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
@@ -34,58 +34,31 @@
       </AbstractStep>
       <AbstractStep z:Id="i6" i:type="ExecutedStep">
         <Childs />
-        <Id>18f48d89-045f-44a8-b016-d4cc81679b17</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i7">
-            <PropertyName>Value</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>14</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i8">
-            <PropertyName>To</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>int_start</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text>Начало заполнения</Text>
-        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i9" i:type="ExecutedStep">
-        <Childs />
         <Id>2402b67f-ddc2-4798-a8e8-9f6167d1c511</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i10">
+          <PropertyValue z:Id="i7">
             <PropertyName>ColumnIndex</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:int">0</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i11">
+          <PropertyValue z:Id="i8">
             <PropertyName>ColumnName</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i12">
+          <PropertyValue z:Id="i9">
             <PropertyName>ColumnRef</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i13">
+          <PropertyValue z:Id="i10">
             <PropertyName>BaseDataTable</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>in_dt_disagreement</_expression>
@@ -100,33 +73,33 @@
         <Text>Удалить столбец position</Text>
         <_activityFullName>Activities.BaseCollections.DataTable.DeleteColumn</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i14" i:type="ExecutedStep">
+      <AbstractStep z:Id="i11" i:type="ExecutedStep">
         <Childs />
         <Id>0f7f4c43-bc52-4e4b-b3ba-560211bc73b4</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i15">
+          <PropertyValue z:Id="i12">
             <PropertyName>ColumnIndex</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:int">0</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i16">
+          <PropertyValue z:Id="i13">
             <PropertyName>ColumnName</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i17">
+          <PropertyValue z:Id="i14">
             <PropertyName>ColumnRef</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i18">
+          <PropertyValue z:Id="i15">
             <PropertyName>BaseDataTable</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>in_dt_HaveNotInSecond</_expression>
@@ -141,33 +114,33 @@
         <Text>Удалить столбец position</Text>
         <_activityFullName>Activities.BaseCollections.DataTable.DeleteColumn</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i19" i:type="ExecutedStep">
+      <AbstractStep z:Id="i16" i:type="ExecutedStep">
         <Childs />
         <Id>dc90e277-44a3-48b7-80dc-66354916fa6f</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i20">
+          <PropertyValue z:Id="i17">
             <PropertyName>ColumnIndex</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
             <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:int">0</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i21">
+          <PropertyValue z:Id="i18">
             <PropertyName>ColumnName</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i22">
+          <PropertyValue z:Id="i19">
             <PropertyName>ColumnRef</PropertyName>
             <_dataType>Value</_dataType>
             <_expression></_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i23">
+          <PropertyValue z:Id="i20">
             <PropertyName>BaseDataTable</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>in_dt_HaveNotInFirst</_expression>
@@ -182,263 +155,22 @@
         <Text>Удалить столбец position</Text>
         <_activityFullName>Activities.BaseCollections.DataTable.DeleteColumn</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i24" i:type="ExecutedStep">
-        <Childs>
-          <AbstractStep z:Id="i25" i:type="ExecutedStep">
-            <Childs />
-            <Id>49ff2f6d-d7b7-4513-9a9b-89e88f7e57b7</Id>
-            <Parent z:Ref="i24" />
-            <PropertyValues>
-              <PropertyValue z:Id="i26">
-                <PropertyName>Value</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>Path.Combine(in_dict_paths["ResultsFolder"].ToString(), "Template (" + DateTime.Now.ToString("ddMMyyyy HHmmss") + ").xlsx")</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i27">
-                <PropertyName>To</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>str_path</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-            </PropertyValues>
-            <SelectedOptionId i:nil="true" />
-            <EnableStatus>true</EnableStatus>
-            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-            <RetryCount>-1</RetryCount>
-            <Text>Получение пути к шаблону в result</Text>
-            <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-          </AbstractStep>
-          <AbstractStep z:Id="i28" i:type="ExecutedStep">
-            <Childs />
-            <Id>7fd091d2-6d44-4750-8bbb-cbd712babde4</Id>
-            <Parent z:Ref="i24" />
-            <PropertyValues>
-              <PropertyValue z:Id="i29">
-                <PropertyName>PathFrom</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>file</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i30">
-                <PropertyName>PathTo</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>str_path</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i31">
-                <PropertyName>WithDeleteFrom</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i32">
-                <PropertyName>WithDeleteTo</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-            </PropertyValues>
-            <SelectedOptionId i:nil="true" />
-            <EnableStatus>true</EnableStatus>
-            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-            <RetryCount>-1</RetryCount>
-            <Text>Копировать в result шаблон</Text>
-            <_activityFullName>Activities.Files.CopyFileCatalog</_activityFullName>
-          </AbstractStep>
-          <AbstractStep z:Id="i33" i:type="ExecutedStep">
-            <Childs />
-            <Id>a620e82d-9d0a-449b-ae21-19ba2b0592a4</Id>
-            <Parent z:Ref="i24" />
-            <PropertyValues>
-              <PropertyValue z:Id="i34">
-                <PropertyName>StartingCell</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>"A" + int_start.ToString()</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i35">
-                <PropertyName>DataTable</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>in_dt_HaveNotInFirst</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i36">
-                <PropertyName>AddHeaders</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i37">
-                <PropertyName>ConsiderDataType</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i38">
-                <PropertyName>SheetName</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>"ПРОТОКОЛ"</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i39">
-                <PropertyName>FileName</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>file</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-            </PropertyValues>
-            <SelectedOptionId i:nil="true" />
-            <EnableStatus>true</EnableStatus>
-            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-            <RetryCount>-1</RetryCount>
-            <Text>Заполнение данных из первого листа, которых нет во втором листе</Text>
-            <_activityFullName>Activities.Office.Excel.WriteRange</_activityFullName>
-          </AbstractStep>
-          <AbstractStep z:Id="i40" i:type="ExecutedStep">
-            <Childs />
-            <Id>482ca77d-be6e-4540-beb4-ff319713c6f3</Id>
-            <Parent z:Ref="i24" />
-            <PropertyValues>
-              <PropertyValue z:Id="i41">
-                <PropertyName>StartingCell</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>"A" + (int_start + in_dt_HaveNotInFirst.Rows.Count).ToString()</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i42">
-                <PropertyName>DataTable</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>in_dt_HaveNotInSecond</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i43">
-                <PropertyName>AddHeaders</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i44">
-                <PropertyName>ConsiderDataType</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i45">
-                <PropertyName>SheetName</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>"ПРОТОКОЛ"</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i46">
-                <PropertyName>FileName</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>file</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-            </PropertyValues>
-            <SelectedOptionId i:nil="true" />
-            <EnableStatus>true</EnableStatus>
-            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-            <RetryCount>-1</RetryCount>
-            <Text>Заполнение данных из второго листа, которых нет в первом листе</Text>
-            <_activityFullName>Activities.Office.Excel.WriteRange</_activityFullName>
-          </AbstractStep>
-          <AbstractStep z:Id="i47" i:type="ExecutedStep">
-            <Childs />
-            <Id>80164e1d-b43f-4e88-9487-120d4292c00b</Id>
-            <Parent z:Ref="i24" />
-            <PropertyValues>
-              <PropertyValue z:Id="i48">
-                <PropertyName>StartingCell</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>"A" + (int_start + in_dt_HaveNotInFirst.Rows.Count + in_dt_HaveNotInSecond.Rows.Count).ToString()</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i49">
-                <PropertyName>DataTable</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>in_dt_disagreement</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i50">
-                <PropertyName>AddHeaders</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i51">
-                <PropertyName>ConsiderDataType</PropertyName>
-                <_dataType>Value</_dataType>
-                <_expression i:nil="true" />
-                <_value xmlns:d9p1="http://www.w3.org/2001/XMLSchema" i:type="d9p1:boolean">false</_value>
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i52">
-                <PropertyName>SheetName</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>"ПРОТОКОЛ"</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-              <PropertyValue z:Id="i53">
-                <PropertyName>FileName</PropertyName>
-                <_dataType>Expression</_dataType>
-                <_expression>file</_expression>
-                <_value i:nil="true" />
-                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-              </PropertyValue>
-            </PropertyValues>
-            <SelectedOptionId i:nil="true" />
-            <EnableStatus>true</EnableStatus>
-            <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-            <RetryCount>-1</RetryCount>
-            <Text>Заполнение данных, у которых расходятся дебет/кредит</Text>
-            <_activityFullName>Activities.Office.Excel.WriteRange</_activityFullName>
-          </AbstractStep>
-        </Childs>
-        <Id>611fe0e9-d3d2-413e-93c6-6dbc5828c666</Id>
+      <AbstractStep z:Id="i21" i:type="ExecutedStep">
+        <Childs />
+        <Id>49ff2f6d-d7b7-4513-9a9b-89e88f7e57b7</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i54">
-            <PropertyName>Collection</PropertyName>
+          <PropertyValue z:Id="i22">
+            <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>list_filesInTemplates</_expression>
+            <_expression>Path.Combine(in_dict_paths["ResultsFolder"].ToString(), "Template (" + DateTime.Now.ToString("ddMMyyyy HHmmss") + ").xlsx")</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i55">
-            <PropertyName>Iterator</PropertyName>
+          <PropertyValue z:Id="i23">
+            <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>file</_expression>
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i56">
-            <PropertyName>Counter</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression></_expression>
+            <_expression>str_path</_expression>
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
@@ -447,8 +179,214 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
-        <_activityFullName>BR.Core.Base.LoopForEach</_activityFullName>
+        <Text>Получение пути к шаблону в result</Text>
+        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i24" i:type="ExecutedStep">
+        <Childs />
+        <Id>7fd091d2-6d44-4750-8bbb-cbd712babde4</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i25">
+            <PropertyName>PathFrom</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>file</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i26">
+            <PropertyName>PathTo</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>str_path</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i27">
+            <PropertyName>WithDeleteFrom</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i28">
+            <PropertyName>WithDeleteTo</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Копировать в result шаблон</Text>
+        <_activityFullName>Activities.Files.CopyFileCatalog</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i29" i:type="ExecutedStep">
+        <Childs />
+        <Id>a620e82d-9d0a-449b-ae21-19ba2b0592a4</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i30">
+            <PropertyName>StartingCell</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"A" + in_int_startDataInTemplate.ToString()</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i31">
+            <PropertyName>DataTable</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>in_dt_HaveNotInFirst</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i32">
+            <PropertyName>AddHeaders</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i33">
+            <PropertyName>ConsiderDataType</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i34">
+            <PropertyName>SheetName</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"ПРОТОКОЛ"</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i35">
+            <PropertyName>FileName</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>file</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Заполнение данных из первого листа, которых нет во втором листе</Text>
+        <_activityFullName>Activities.Office.Excel.WriteRange</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i36" i:type="ExecutedStep">
+        <Childs />
+        <Id>482ca77d-be6e-4540-beb4-ff319713c6f3</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i37">
+            <PropertyName>StartingCell</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"A" + (in_int_startDataInTemplate + in_dt_HaveNotInFirst.Rows.Count).ToString()</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i38">
+            <PropertyName>DataTable</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>in_dt_HaveNotInSecond</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i39">
+            <PropertyName>AddHeaders</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i40">
+            <PropertyName>ConsiderDataType</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i41">
+            <PropertyName>SheetName</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"ПРОТОКОЛ"</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i42">
+            <PropertyName>FileName</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>file</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Заполнение данных из второго листа, которых нет в первом листе</Text>
+        <_activityFullName>Activities.Office.Excel.WriteRange</_activityFullName>
+      </AbstractStep>
+      <AbstractStep z:Id="i43" i:type="ExecutedStep">
+        <Childs />
+        <Id>80164e1d-b43f-4e88-9487-120d4292c00b</Id>
+        <Parent z:Ref="i2" />
+        <PropertyValues>
+          <PropertyValue z:Id="i44">
+            <PropertyName>StartingCell</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"A" + (in_int_startDataInTemplate + in_dt_HaveNotInFirst.Rows.Count + in_dt_HaveNotInSecond.Rows.Count).ToString()</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i45">
+            <PropertyName>DataTable</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>in_dt_disagreement</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i46">
+            <PropertyName>AddHeaders</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i47">
+            <PropertyName>ConsiderDataType</PropertyName>
+            <_dataType>Value</_dataType>
+            <_expression i:nil="true" />
+            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:boolean">false</_value>
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i48">
+            <PropertyName>SheetName</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>"ПРОТОКОЛ"</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+          <PropertyValue z:Id="i49">
+            <PropertyName>FileName</PropertyName>
+            <_dataType>Expression</_dataType>
+            <_expression>file</_expression>
+            <_value i:nil="true" />
+            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+          </PropertyValue>
+        </PropertyValues>
+        <SelectedOptionId i:nil="true" />
+        <EnableStatus>true</EnableStatus>
+        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
+        <RetryCount>-1</RetryCount>
+        <Text>Заполнение данных, у которых расходятся дебет/кредит</Text>
+        <_activityFullName>Activities.Office.Excel.WriteRange</_activityFullName>
       </AbstractStep>
     </Childs>
     <Id>c9158c28-5cc0-4030-8e64-37d17ff5c557</Id>
@@ -464,33 +402,35 @@
   <Name>Excel_fillingTamplate.pix</Name>
   <Namespaces xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <Params>
-    <Parameter z:Id="i57">
+    <Parameter z:Id="i50">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dict_paths</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
-    <Parameter z:Id="i58">
+    <Parameter z:Id="i51">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dt_HaveNotInFirst</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
-    <Parameter z:Id="i59">
+    <Parameter z:Id="i52">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dt_HaveNotInSecond</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
     </Parameter>
-    <Parameter z:Id="i60">
+    <Parameter z:Id="i53">
       <DefaultValueExpression></DefaultValueExpression>
       <Description></Description>
       <Name>in_dt_disagreement</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Data.DataTable</TypeString>
+    </Parameter>
+    <Parameter z:Id="i54">
+      <DefaultValueExpression></DefaultValueExpression>
+      <Description></Description>
+      <Name>in_int_startDataInTemplate</Name>
+      <TypeString>System.Int32</TypeString>
     </Parameter>
   </Params>
   <TemplateVersion xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" i:nil="true" />

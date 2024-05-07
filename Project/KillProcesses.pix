@@ -259,14 +259,12 @@ chrome - Google Chrome</Text>
       <DefaultValueExpression>new List&lt;String&gt;{}</DefaultValueExpression>
       <Description></Description>
       <Name>list_processesToKill</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
     <Parameter z:Id="i27">
       <DefaultValueExpression>new List&lt;String&gt;{}</DefaultValueExpression>
       <Description></Description>
       <Name>list_foldersToDelete</Name>
-      <RunnerType>None</RunnerType>
       <TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</TypeString>
     </Parameter>
   </Params>
